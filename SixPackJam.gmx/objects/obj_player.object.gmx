@@ -99,6 +99,18 @@ player_num = 0;
             <string>// image_index is 1 when the ball is deadly
 if (other.image_index = 1) {
     with(other) { instance_destroy(); }
+    
+    if (player_num = 1) {
+        instance_create(random(room_width/2),
+                        random(room_height),
+                        obj_player_one);
+    }
+    if (player_num = 2) {
+        instance_create(room_width/2 + random(room_width/2),
+                        random(room_height),
+                        obj_player_two);
+    }
+    
     instance_destroy();
 }
 else if (!has_ball &amp;&amp; other.holder = 0) {
