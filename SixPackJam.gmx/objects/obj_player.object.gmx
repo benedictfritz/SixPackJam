@@ -46,6 +46,7 @@
           <argument>
             <kind>1</kind>
             <string>y_speed = 1.5;
+x_speed = 1.5;
 has_ball = false;
 player_num = 0;
 </string>
@@ -122,7 +123,19 @@ player_num = 0;
           <argument>
             <kind>1</kind>
             <string>move_contact_solid(direction, -1);
-vspeed = 0;
+
+if (collision_point(x - 20, y, obj_wall, false, false)) {
+    if (hspeed &lt; 0) { hspeed = 0; }
+}
+if (collision_point(x, y-20, obj_wall, false, false)) {
+    if (vspeed &lt; 0) { vspeed = 0; }
+}
+if (collision_point(x+20, y, obj_wall, false, false)) {
+    if (hspeed &gt; 0) { hspeed = 0; }
+}
+if (collision_point(x, y+20, obj_wall, false, false)) {
+    if (vspeed &gt; 0) { vspeed = 0; }
+}
 </string>
           </argument>
         </arguments>
