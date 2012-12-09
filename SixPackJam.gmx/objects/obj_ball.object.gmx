@@ -128,6 +128,7 @@ else if (holder = 2) {
     holder = 0;
     hspeed = 10;
     vspeed = obj_player_one.vspeed;
+    obj_player_one.has_ball = false;
 }
 </string>
           </argument>
@@ -155,6 +156,7 @@ else if (holder = 2) {
     holder = 0;
     hspeed = -10;
     vspeed = obj_player_two.vspeed;
+    obj_player_two.has_ball = false;
 }
 </string>
           </argument>
