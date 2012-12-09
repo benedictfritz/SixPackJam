@@ -126,7 +126,7 @@ else if (holder = 2) {
             <kind>1</kind>
             <string>if (holder = 1) {
     holder = 0;
-    hspeed = 10;
+    hspeed = 10 + obj_player_one.hspeed;
     vspeed = obj_player_one.vspeed;
     obj_player_one.has_ball = false;
 }
@@ -154,7 +154,7 @@ else if (holder = 2) {
             <kind>1</kind>
             <string>if (holder = 2) {
     holder = 0;
-    hspeed = -10;
+    hspeed = -10 + obj_player_two.hspeed;
     vspeed = obj_player_two.vspeed;
     obj_player_two.has_ball = false;
 }
