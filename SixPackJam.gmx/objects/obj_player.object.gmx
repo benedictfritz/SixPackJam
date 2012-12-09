@@ -96,9 +96,16 @@ player_num = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!has_ball &amp;&amp; other.holder = 0) {
+            <string>// image_index is 1 when the ball is deadly
+if (other.image_index = 1) {
+    with(other) { instance_destroy(); }
+    instance_destroy();
+}
+else if (!has_ball &amp;&amp; other.holder = 0) {
     has_ball = true;
     other.holder = player_num;
+    other.hspeed = 0;
+    other.vspeed = 0;
 }
 </string>
           </argument>
