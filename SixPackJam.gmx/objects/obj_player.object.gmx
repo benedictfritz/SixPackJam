@@ -101,11 +101,13 @@ if (other.image_index = 1) {
     with(other) { instance_destroy(); }
     
     if (player_num = 1) {
+        global.p2_score = global.p2_score + 1;
         instance_create(random(room_width/2),
                         random(room_height),
                         obj_player_one);
     }
     if (player_num = 2) {
+        global.p1_score = global.p1_score + 1;
         instance_create(room_width/2 + random(room_width/2),
                         random(room_height),
                         obj_player_two);
