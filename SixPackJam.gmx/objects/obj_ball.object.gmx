@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>holder = 0;
+throw_speed = 10;
 </string>
           </argument>
         </arguments>
@@ -46,7 +47,7 @@
         <arguments>
           <argument>
             <kind>0</kind>
-            <string>0.1</string>
+            <string>0.2</string>
           </argument>
         </arguments>
       </action>
@@ -133,9 +134,12 @@ else {
             <kind>1</kind>
             <string>if (holder = 1) {
     holder = 0;
-    hspeed = 10 + obj_player_one.hspeed;
+    hspeed = throw_speed + obj_player_one.hspeed;
     vspeed = obj_player_one.vspeed;
     obj_player_one.has_ball = false;
+    
+    x = obj_player_one.x + obj_player_one.sprite_width/2 + sprite_width/2;
+    y = obj_player_one.y;
 }
 </string>
           </argument>
@@ -161,9 +165,12 @@ else {
             <kind>1</kind>
             <string>if (holder = 2) {
     holder = 0;
-    hspeed = -10 + obj_player_two.hspeed;
+    hspeed = -throw_speed + obj_player_two.hspeed;
     vspeed = obj_player_two.vspeed;
     obj_player_two.has_ball = false;
+    
+    x = obj_player_two.x - obj_player_two.sprite_width/2 - sprite_width/2;
+    y = obj_player_two.y;
 }
 </string>
           </argument>
