@@ -28,6 +28,7 @@
             <string>globalvar p1_score;
 global.p1_score = 0;
 draw_set_halign(fa_left);
+draw_set_font(font_score);
 </string>
           </argument>
         </arguments>

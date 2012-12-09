@@ -15,6 +15,9 @@
     <background>background\bg_floor</background>
   </backgrounds>
   <paths name="paths"/>
+  <fonts name="fonts">
+    <font>fonts\font_score</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_p1_score</object>
     <object>objects\obj_p2_score</object>
