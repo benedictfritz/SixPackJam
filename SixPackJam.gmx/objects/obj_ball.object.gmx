@@ -76,6 +76,13 @@ else if (holder = 2) {
     x = obj_player_two.x - obj_player_one.sprite_width/2 - sprite_width/2;
     y = obj_player_two.y;
 }
+
+if (speed &lt; 5) {
+    image_index = 0;
+}
+else {
+    image_index = 1;
+}
 </string>
           </argument>
         </arguments>
