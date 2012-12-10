@@ -27,6 +27,12 @@
             <kind>1</kind>
             <string>holder = 0;
 throw_speed = 10;
+
+spawn_x = x;
+spawn_y = y;
+
+show_debug_message(string(spawn_x));
+show_debug_message(string(spawn_y));
 </string>
           </argument>
         </arguments>

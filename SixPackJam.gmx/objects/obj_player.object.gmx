@@ -98,7 +98,12 @@ player_num = 0;
             <kind>1</kind>
             <string>// image_index is 1 when the ball is deadly
 if (other.image_index = 1) {
-    with(other) { instance_destroy(); }
+    with(other) { 
+        x = spawn_x;
+        y = spawn_y;
+        hspeed = 0;
+        vspeed = 0;
+    }
     
     if (player_num = 1) {
         global.p2_score = global.p2_score + 1;
