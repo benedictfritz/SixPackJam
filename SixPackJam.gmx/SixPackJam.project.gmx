@@ -19,17 +19,19 @@
     <font>fonts\font_score</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_p1_score</object>
-    <object>objects\obj_p2_score</object>
     <objects name="player">
       <object>objects\obj_player</object>
       <object>objects\obj_player_one</object>
       <object>objects\obj_player_two</object>
     </objects>
+    <objects name="scoreboards">
+      <object>objects\obj_p1_score</object>
+      <object>objects\obj_p2_score</object>
+    </objects>
     <objects name="level">
       <object>objects\obj_wall</object>
+      <object>objects\obj_ball</object>
     </objects>
-    <object>objects\obj_ball</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_game</room>
