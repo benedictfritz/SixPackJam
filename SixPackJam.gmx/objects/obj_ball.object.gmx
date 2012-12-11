@@ -58,6 +58,85 @@ show_debug_message(string(spawn_y));
         </arguments>
       </action>
     </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>// see http://gmc.yoyogames.com/index.php?showtopic=446075
+
+with obj_ball {
+    radius = 16;
+
+    if (id != other.id) {
+        dx = other.x - x;
+        dy = other.y - y;
+        dis = sqrt(sqr(dx)+sqr(dy));
+        
+        if (dis &lt;= radius + radius) {
+            // normalize
+            dx /= dis;
+            dy /= dis;
+            
+            // calculate the component of velocity in the direction
+            vp1 = hspeed*dx + vspeed*dy;
+            vp2 = other.hspeed*dx + other.vspeed*dy;
+            
+            if ((vp1 - vp2) != 0) {
+                dt = (radius + radius - dis) / (vp1-vp2)
+                
+                // move the balls back so they just touch
+                x -= hspeed * dt;
+                y -= vspeed * dt;
+                other.x -= other.hspeed * dt;
+                other.y -= other.vspeed * dt;
+                
+                // projection of the velocities in these axes
+                va1 = (hspeed*dx + vspeed*dy);
+                vb1 = (vspeed*dx - hspeed*dy);
+                va2 = (other.hspeed*dx + other.vspeed*dy);
+                vb2 = (other.vspeed*dx - other.hspeed*dy);
+                
+                // new velocities in these axes. take into account the
+                // mass of each ball.
+                // TODO: mass of held ball is super huge
+                // TODO: refactor bounce as property of balls
+                mass = 1;
+                vaP1 = (va1 + 2*(va2-va1)) / (1 + mass/mass);
+                vaP2 = (va2 + 2*(va1-va2)) / (1 + mass/mass);
+                
+                hspeed = vaP1*dx - vb1*dy;
+                vspeed = vaP1*dy + vb1*dx;
+                other.hspeed = vaP2*dx - vb2*dy;
+                other.vspeed = vaP2*dy + vb2*dx;
+                
+                // we moved the balls back in time, so we need to
+                // move them forward
+                x += hspeed*dt;
+                y += vspeed*dt;
+                other.x += other.hspeed*dt;
+                other.y += other.vspeed*dt;
+            }
+        }
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -98,25 +177,21 @@ else {
     <event eventtype="4" ename="obj_ball">
       <action>
         <libid>1</libid>
-        <id>115</id>
+        <id>605</id>
         <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_bounce</functionname>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>4</kind>
-            <string>1</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>1</string>
+            <kind>1</kind>
+            <string>Collision</string>
           </argument>
         </arguments>
       </action>
