@@ -19,6 +19,7 @@
     <font>fonts\font_score</font>
   </fonts>
   <objects name="objects">
+    <object>objects\obj_control</object>
     <objects name="player">
       <object>objects\obj_player</object>
       <object>objects\obj_player_one</object>

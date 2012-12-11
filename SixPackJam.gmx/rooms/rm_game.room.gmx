@@ -132,6 +132,7 @@
     <instance objName="obj_ball" x="320" y="288" name="inst_C9B622C7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ball" x="320" y="416" name="inst_FAC27059" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ball" x="320" y="32" name="inst_7F114569" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_control" x="-32" y="-64" name="inst_E0304ABD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
